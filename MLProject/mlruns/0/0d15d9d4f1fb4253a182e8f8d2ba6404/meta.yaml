@@ -1,0 +1,15 @@
+artifact_uri: file:///home/wildan/MSML_Wildan_Mukhaladun/Workflow-CI/MLProject/mlruns/0/0d15d9d4f1fb4253a182e8f8d2ba6404/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: 0d15d9d4f1fb4253a182e8f8d2ba6404
+run_name: trusting-bird-410
+run_uuid: 0d15d9d4f1fb4253a182e8f8d2ba6404
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780816199779
+status: 1
+tags: []
+user_id: wildan

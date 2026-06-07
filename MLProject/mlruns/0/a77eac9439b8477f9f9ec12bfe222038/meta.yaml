@@ -1,0 +1,15 @@
+artifact_uri: file:///home/wildan/MSML_Wildan_Mukhaladun/Workflow-CI/MLProject/mlruns/0/a77eac9439b8477f9f9ec12bfe222038/artifacts
+end_time: 1780816271535
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: a77eac9439b8477f9f9ec12bfe222038
+run_name: sassy-boar-29
+run_uuid: a77eac9439b8477f9f9ec12bfe222038
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1780816266946
+status: 4
+tags: []
+user_id: wildan

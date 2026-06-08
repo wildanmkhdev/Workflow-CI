@@ -1,44 +1,39 @@
 name: Train Model
 
 on:
-
   push:
-
     branches:
       - main
 
   workflow_dispatch:
 
 jobs:
-
   train:
-
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-    - name: Checkout
-      uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
 
-    - name: Setup Python
-      uses: actions/setup-python@v5
-      with:
-        python-version: "3.12"
+      - name: Install Dependencies
+        run: |
+          pip install mlflow==2.19.0
+          pip install pandas
+          pip install numpy
+          pip install scikit-learn
 
-    - name: Install Dependencies
-      run: |
-        pip install pandas
-        pip install numpy
-        pip install scikit-learn
-        pip install mlflow==2.19.0
+      - name: Run MLflow Project
+        run: |
+          cd Workflow-CI/MLProject
+          mlflow run . --env-manager local
 
-    - name: Run MLflow Project
-      working-directory: Workflow-CI/MLProject
-      run: |
-      mlflow run . --env-manager local
-
-    - name: Upload Artifact
-      uses: actions/upload-artifact@v4
-      with:
-        name: trained-model
-        path: MLProject/mlruns
+      - name: Upload MLflow Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mlflow-artifacts
+          path: Workflow-CI/MLProject/mlruns

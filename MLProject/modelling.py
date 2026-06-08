@@ -7,6 +7,8 @@ import mlflow
 import mlflow.sklearn
 
 mlflow.set_experiment("Workflow_CI_Training")
+mlflow.autolog()
+
 
 df = pd.read_csv(
     "student_exam_preprocessed.csv"
@@ -49,7 +51,6 @@ mlflow.sklearn.log_model(
     model,
     "model"
 )
-
 print(
     f"R2 = {score}"
 )

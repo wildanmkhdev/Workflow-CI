@@ -32,10 +32,10 @@ jobs:
         pip install scikit-learn
         pip install mlflow==2.19.0
 
-    - name: Train Model
-      working-directory: MLProject
+    - name: Run MLflow Project
+      working-directory: Workflow-CI/MLProject
       run: |
-        python modelling.py
+      mlflow run . --env-manager local
 
     - name: Upload Artifact
       uses: actions/upload-artifact@v4
